@@ -57,7 +57,7 @@ function Navbar() {
             {/* Hamburger Menu for Mobile */}
             {/* Hamburger button*/}
             <div className="md:hidden flex items-center">
-              <button className="text-white hover:text-brand-orange focus:outline-none transition-colors cursor-pointer" aria-label="Menu">
+              <button className="text-white hover:text-brand-orange focus:outline-none transition-colors cursor-pointer hamburger" aria-label="Menu">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"

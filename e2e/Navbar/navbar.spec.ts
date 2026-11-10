@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect} from "@playwright/test";
 
 test.describe("Navigation bar", () => {
   test.beforeEach(async ({ page }) => {
@@ -39,10 +39,15 @@ test.describe("Navigation bar", () => {
     await expect(page).toHaveURL("/contact");
   });
   test("navbar has a change language button", async ({ page }) => {
-    const changeLanguageButton = page.locator("button[aria-label='Change Language']");
+    const changeLanguageButton = page.locator(
+      "button[aria-label='Change Language']",
+    );
     await expect(changeLanguageButton).toBeVisible();
     await changeLanguageButton.click();
     console.log("Change language button clicked");
     // Add assertions for language change if applicable
   });
 });
+
+
+
