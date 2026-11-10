@@ -8,11 +8,13 @@ test("has title", async ({ page }) => {
 });
 
 test.describe("Home page", () => {
-  test.beforeEach(async ({page}) => {
+  test.beforeEach(async ({ page }) => {
     await page.goto("/");
-  })
-  test("Hero section", async ({page}) => {
-     const heroSectionTitle = page.locator('h1');
-     await expect(heroSectionTitle).toHaveText("Testeuse QA /");
-  })
+  });
+  test("Hero section", async ({ page }) => {
+    const heroSectionTitle = page.locator("h1");
+    await expect(heroSectionTitle).toHaveText(
+      "Testeuse QA /Automaticienne de tests",
+    );
+  });
 });

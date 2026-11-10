@@ -15,8 +15,12 @@ export default function Home() {
             <div className="flex-1 space-y-6">
               <div className="space-y-2">
                 <h1 className="text-3xl lg:text-4xl font-extrabold text-brand-black leading-tight">
-                  Testeuse QA /
+                  Testeuse QA / 
+                  <br />
+                  <span className="text-brand-red">Automaticienne de tests</span>
                 </h1>
+               
+
               </div>
             </div>
           </div>
