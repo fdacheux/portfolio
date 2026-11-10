@@ -4,12 +4,12 @@
 }
 
 @theme {
-    --color-brand-black: #111111;
-    --color-brand-red: #D90429;
-    --color-brand-orange: #F77F00;
-    --color-brand-light: #F8F9FA;
+  --color-brand-black: #111111;
+  --color-brand-red: #d90429;
+  --color-brand-orange: #f77f00;
+  --color-brand-light: #f8f9fa;
 }
 
-
-
-
+.navbar-links {
+  @apply text-white hover:text-brand-orange transition-colors duration-300;
+}

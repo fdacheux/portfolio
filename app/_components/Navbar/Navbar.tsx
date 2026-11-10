@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import styles from './Navbar.module.css';
 
 function Navbar() {
   return (
@@ -26,10 +27,13 @@ function Navbar() {
           <div className="flex items-center gap-4 md:gap-8">
             {/* List of links */}
             <ul className="hidden md:flex space-x-8">
-              <li className="text-white hover:text-brand-orange transition-colors duration-300">
+              <li className="navbar-links">
                 <Link href="/CV">CV</Link>
               </li>
-              
+              <li className="navbar-links">
+                <Link href="/projects">Projets</Link>
+              </li>
+
             </ul>
           </div>
         </div>

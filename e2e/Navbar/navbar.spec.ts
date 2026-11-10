@@ -20,4 +20,10 @@ test.describe("Navigation bar", () => {
     await cvLink.click();
     await expect(page).toHaveURL("/CV");
   });
+    test("navbar has a Projets link", async ({ page }) => {
+    const projetsLink = page.locator("a[href='/projects']");
+    await expect(projetsLink).toBeVisible();
+    await projetsLink.click();
+    await expect(page).toHaveURL("/projects");
+  });
 });
