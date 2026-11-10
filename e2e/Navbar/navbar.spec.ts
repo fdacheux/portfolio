@@ -20,22 +20,29 @@ test.describe("Navigation bar", () => {
     await cvLink.click();
     await expect(page).toHaveURL("/CV");
   });
-    test("navbar has a Projets link", async ({ page }) => {
+  test("navbar has a Projets link", async ({ page }) => {
     const projetsLink = page.locator("a[href='/projects']");
     await expect(projetsLink).toBeVisible();
     await projetsLink.click();
     await expect(page).toHaveURL("/projects");
   });
-    test("navbar has a À propos du sitelink", async ({ page }) => {
+  test("navbar has a À propos du sitelink", async ({ page }) => {
     const aboutLink = page.locator("a[href='/about']");
     await expect(aboutLink).toBeVisible();
     await aboutLink.click();
     await expect(page).toHaveURL("/about");
   });
-      test("navbar has a Contact link", async ({ page }) => {
+  test("navbar has a Contact link", async ({ page }) => {
     const contactLink = page.locator("a[href='/contact']");
     await expect(contactLink).toBeVisible();
     await contactLink.click();
     await expect(page).toHaveURL("/contact");
+  });
+  test("navbar has a change language button", async ({ page }) => {
+    const changeLanguageButton = page.locator("button[aria-label='Change Language']");
+    await expect(changeLanguageButton).toBeVisible();
+    await changeLanguageButton.click();
+    console.log("Change language button clicked");
+    // Add assertions for language change if applicable
   });
 });

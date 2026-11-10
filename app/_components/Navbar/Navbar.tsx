@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import styles from "./Navbar.module.css";
 
 function Navbar() {
   return (
@@ -40,6 +39,21 @@ function Navbar() {
                 <Link href="/contact">Contact</Link>
               </li>
             </ul>
+            {/* Change Language Button */}
+            <button
+              className="flex items-center gap-2 text-white border border-white/30 bg-black/10 hover:bg-white/20 px-3 py-1.5 rounded-full transition-all duration-300 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-white/50 cursor-pointer"
+              aria-label="Change Language"
+            >
+              <Image src="/icons/globe.svg" alt="" width={17} height={17} />
+              <span className="text-sm pb-0.5">FR</span>
+              <Image
+                src="/icons/chevron-up.svg"
+                alt=""
+                width={16}
+                height={16}
+                className="transform rotate-180"
+              />
+            </button>
           </div>
         </div>
       </div>
