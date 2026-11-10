@@ -33,7 +33,9 @@ function Navbar() {
               <li className="navbar-links">
                 <Link href="/projects">Projets</Link>
               </li>
-
+              <li className="navbar-links">
+                <Link href="/about">À propos du site</Link>
+              </li>
             </ul>
           </div>
         </div>

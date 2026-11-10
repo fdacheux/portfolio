@@ -26,4 +26,10 @@ test.describe("Navigation bar", () => {
     await projetsLink.click();
     await expect(page).toHaveURL("/projects");
   });
+    test("navbar has a À propos du sitelink", async ({ page }) => {
+    const aboutLink = page.locator("a[href='/about']");
+    await expect(aboutLink).toBeVisible();
+    await aboutLink.click();
+    await expect(page).toHaveURL("/about");
+  });
 });
