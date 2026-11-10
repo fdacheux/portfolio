@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import styles from './Navbar.module.css';
+import styles from "./Navbar.module.css";
 
 function Navbar() {
   return (
@@ -35,6 +35,9 @@ function Navbar() {
               </li>
               <li className="navbar-links">
                 <Link href="/about">À propos du site</Link>
+              </li>
+              <li className="navbar-links">
+                <Link href="/contact">Contact</Link>
               </li>
             </ul>
           </div>

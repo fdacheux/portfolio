@@ -32,4 +32,10 @@ test.describe("Navigation bar", () => {
     await aboutLink.click();
     await expect(page).toHaveURL("/about");
   });
+      test("navbar has a Contact link", async ({ page }) => {
+    const contactLink = page.locator("a[href='/contact']");
+    await expect(contactLink).toBeVisible();
+    await contactLink.click();
+    await expect(page).toHaveURL("/contact");
+  });
 });
