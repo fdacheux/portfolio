@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {  } from "next/font/google";
 import "./globals.css";
+import Navbar from "./_components/Navbar/Navbar";
 
 
 export const metadata: Metadata = {
@@ -14,7 +15,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="fr"
       className={` h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col"><Navbar />{children}</body>
     </html>
   );
 }
