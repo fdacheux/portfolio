@@ -1,7 +1,34 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
+import MobileMenu from "./MobileMenu/MobileMenu";
+import { useState, useEffect, useRef } from "react";
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const toggleHamburger = () => {
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent): void => {
+      if (
+        menuRef.current &&
+        event.target instanceof Node &&
+        !menuRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <nav className="fixed top-0 left-0 w-full bg-linear-to-r from-brand-red to-red-900 shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,18 +52,26 @@ function Navbar() {
           {/* Navigation Links */}
           <div className="flex items-center gap-4 md:gap-8">
             {/* List of links */}
-            <ul className="hidden md:flex space-x-8">
+            <ul className="hidden md:flex space-x-8 ">
               <li className="navbar-links">
-                <Link href="/CV">CV</Link>
+                <Link href="/CV" onClick={toggleHamburger}>
+                  CV
+                </Link>
               </li>
               <li className="navbar-links">
-                <Link href="/projects">Projets</Link>
+                <Link href="/projects" onClick={toggleHamburger}>
+                  Projets
+                </Link>
               </li>
               <li className="navbar-links">
-                <Link href="/about">À propos du site</Link>
+                <Link href="/about" onClick={toggleHamburger}>
+                  À propos du site
+                </Link>
               </li>
               <li className="navbar-links">
-                <Link href="/contact">Contact</Link>
+                <Link href="/contact" onClick={toggleHamburger}>
+                  Contact
+                </Link>
               </li>
             </ul>
             {/* Change Language Button */}
@@ -56,8 +91,12 @@ function Navbar() {
             </button>
             {/* Hamburger Menu for Mobile */}
             {/* Hamburger button*/}
-            <div className="md:hidden flex items-center">
-              <button className="text-white hover:text-brand-orange focus:outline-none transition-colors cursor-pointer hamburger" aria-label="Menu">
+            <div ref={menuRef} className="md:hidden flex items-center relative">
+              <button
+                className="text-white hover:text-brand-orange focus:outline-none transition-colors cursor-pointer hamburger"
+                aria-label="Menu"
+                onClick={toggleHamburger}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -71,6 +110,7 @@ function Navbar() {
                   />
                 </svg>
               </button>
+              {isOpen && <MobileMenu />}
             </div>
           </div>
         </div>
