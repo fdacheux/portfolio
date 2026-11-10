@@ -4,6 +4,10 @@
 }
 
 @theme {
+    --color-brand-black: #111111;
+    --color-brand-red: #D90429;
+    --color-brand-orange: #F77F00;
+    --color-brand-light: #F8F9FA;
 }
 
 
