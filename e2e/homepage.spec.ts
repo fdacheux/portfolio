@@ -11,7 +11,7 @@ test.describe("Home page", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
   });
-  test("Hero section title", async ({ page }) => {
+  test("Hero section title", {tag: "@cta"}, async ({ page }) => {
     const heroSection = page.locator("#hero");
     const heroSectionTitle = page.locator("h1");
     await expect(heroSectionTitle).toHaveText(
@@ -29,6 +29,13 @@ test.describe("Home page", () => {
     await expect(cta.getByRole("link").first()).toBeVisible();
     const downloadCvLink = cta.getByRole("link").first();
     await expect(downloadCvLink).toHaveText("Découvrir mon CV");
-    console.log("link clicked")
+  })
+  test("CTA : link to projects button", {tag: "@cta"}, async ({ page }) => {
+    const cta = page.locator("#cta")
+    await expect(cta.getByRole("link").last()).toBeVisible();
+    const discoverProjectsLink = cta.getByRole("link").last();
+    await expect(discoverProjectsLink).toHaveText("Découvrir mes projets");
+    discoverProjectsLink.click();
+    await expect(page).toHaveURL("/projects");
   })
 });

@@ -22,3 +22,16 @@
   background: linear-gradient(90deg, #d90429 0%, #f77f00 100%);
   transition: all 0.3s ease;
 }
+
+.btn-primary:hover {
+  box-shadow: 0 10px 15px -3px rgba(217, 4, 41, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+  background-color: #111111;
+  color: white;
+}
