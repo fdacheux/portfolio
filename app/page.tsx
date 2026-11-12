@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 export default function Home() {
   return (
     <main className="grow">
@@ -87,6 +88,24 @@ export default function Home() {
                     Découvrir mes projets
                   </div>
                 </Link>
+              </div>
+              {/* Photo */}
+            </div>
+            <div className="lg:w-1/3 flex justify-center lg:justify-end">
+              <div className="relative w-48 h-48 lg:w-64 lg:h-64 rounded-2xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition duration-300 border-4 border-white bg-gray-200 flex items-center justify-center group">
+                {" "}
+                <div className="w-full h-full relative">
+                  <Image
+                    src="/assets/cv_photo.jpg"
+                    className="max-w-none max-h-none h-auto absolute md:-left-45 -left-50"
+                    alt="Fanny Dacheux"
+                    width={600}
+                    height={800}
+                    objectFit="contain"
+                    objectPosition="center"
+                    loading="eager"
+                  />
+                </div>
               </div>
             </div>
           </div>
