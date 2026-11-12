@@ -38,4 +38,8 @@ test.describe("Home page", () => {
     discoverProjectsLink.click();
     await expect(page).toHaveURL("/projects");
   })
+  test("Carrousel section title", {tag: "@carrousel"}, async({page}) => {
+    const carrouselSection = page.locator("#carrousel");
+    await expect(carrouselSection.locator("h2")).toHaveText("Derniers projets & parcours");
+  })
 });
