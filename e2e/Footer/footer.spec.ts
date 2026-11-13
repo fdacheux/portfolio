@@ -25,7 +25,7 @@ test.describe("Footer", () => {
   test("links to the LinkedIn profile", async ({ page }) => {
     const linkedInLink = page
       .getByRole("contentinfo")
-      .getByRole("link", { name: /linkedin/i });
+      .getByRole("link", { name: /Linkedin/i });
 
     await expect(linkedInLink).toBeVisible();
     await expect(linkedInLink).toHaveAttribute(
