@@ -178,7 +178,7 @@ export const Carousel: React.FC<CarouselProps> = ({
               <div className="absolute inset-0 bg-linear-to-t from-neutral-950/90 via-neutral-950/40 to-transparent" />
 
               {/* Project Details */}
-              <div className="absolute bottom-0 inset-x-0 p-6 sm:p-10 z-20 flex flex-col justify-end max-w-2xl">
+              <div className="absolute bottom-0 inset-x-0 p-6 sm:p-10 z-20 flex flex-col justify-end max-w-2xl ">
                 <div className="flex items-center gap-2 text-xs font-mono text-brand-orange font-medium mb-2">
                   <span>{item.category}</span>
                   {item.year && (
@@ -201,11 +201,11 @@ export const Carousel: React.FC<CarouselProps> = ({
                   <div>
                     <a
                       href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      // target="_blank"
+                      // rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-950 bg-brand-orange hover:bg-amber-500 px-4 py-2 rounded-lg transition-colors cursor-pointer"
                     >
-                      <span>View Project</span>
+                      <span>View More</span>
                       <span aria-hidden="true">→</span>
                     </a>
                   </div>
