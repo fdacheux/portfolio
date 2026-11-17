@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail } from "lucide-react";
 
 function Footer() {
   return (
@@ -39,15 +38,13 @@ function Footer() {
               href="/contact"
               className="flex items-center gap-2 bg-white/10 hover:bg-brand-orange border border-white/20 hover:border-brand-orange px-6 py-3 rounded-full transition-all duration-300 font-medium"
             >
-              <Image
-                alt=""
-                src="/icons/mail.svg"
-                height={30}
-                width={30}
-              />
+              <Image alt="" src="/icons/mail.svg" height={30} width={30} />
               Me contacter par Mail
             </Link>
           </div>
+        </div>
+        <div className="text-center pt-8 border-t border-white/10 text-gray-400 text-sm">
+          © 2026 Fanny D&T. Tous droits réservés.
         </div>
       </div>
     </footer>
