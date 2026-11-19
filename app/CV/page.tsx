@@ -1,7 +1,8 @@
+import HeroSection from "./_components/HeroSection"
 
 function page() {
   return (
-    <div><h2>Curriculum Vitae</h2></div>
+    <div><HeroSection /></div>
   )
 }
 
