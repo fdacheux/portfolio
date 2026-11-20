@@ -1,6 +1,7 @@
-'use client'
+"use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { openContactModal } from "../../_components/ContactModal/ContactModal";
 
 function HeroSection() {
@@ -103,7 +104,12 @@ function HeroSection() {
           </div>
           {/* Double CTA */}
           <div className="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0 min-w-[240px]">
-            <button className="btn-primary text-white font-semibold px-6 py-3.5 rounded-2xl flex items-center justify-center gap-2.5 shadow-lg text-sm sm:text-base cursor-pointer">
+            <Link
+              href="/assets/CV-Fanny-Dacheux.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary text-white font-semibold px-6 py-3.5 rounded-2xl flex items-center justify-center gap-2.5 shadow-lg text-sm sm:text-base cursor-pointer"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -119,8 +125,12 @@ function HeroSection() {
                 />
               </svg>
               Télécharger mon CV (PDF)
-            </button>
-            <button type="button" onClick={openContactModal} className="bg-white/10 hover:bg-white/20 text-white border border-white/25 backdrop-blur-md font-semibold px-6 py-3.5 rounded-2xl flex items-center justify-center gap-2.5 transition-all text-sm sm:text-base cursor-pointer">
+            </Link>
+            <button
+              type="button"
+              onClick={openContactModal}
+              className="bg-white/10 hover:bg-white/20 text-white border border-white/25 backdrop-blur-md font-semibold px-6 py-3.5 rounded-2xl flex items-center justify-center gap-2.5 transition-all text-sm sm:text-base cursor-pointer"
+            >
               <Image alt="" src="/icons/mail.svg" height={22} width={22} />
               Me contacter
             </button>

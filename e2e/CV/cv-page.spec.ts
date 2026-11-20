@@ -32,11 +32,28 @@ test.describe("CV", () => {
   });
   test("CTA buttons", async ({ page }) => {
     const heroSection = page.locator(".hero");
-    const downloadCvBtn = heroSection.getByRole("button").first();
+    const downloadCvLink = heroSection.getByRole("link").first();
     const contactBtn = heroSection.getByRole("button").last();
-    await expect(downloadCvBtn).toBeVisible();
-    await expect(downloadCvBtn).toHaveText("Télécharger mon CV (PDF)");
+
+    await expect(downloadCvLink).toBeVisible();
+    await expect(downloadCvLink).toHaveText("Télécharger mon CV (PDF)");
+    await expect(downloadCvLink).toHaveAttribute("target", "_blank");
+
+    // 2. Écouter l'ouverture du nouvel onglet AVANT le clic
+    const popupPromise = page.waitForEvent("popup");
+    await downloadCvLink.click();
+    const newTab = await popupPromise;
+
+    // 3. Vérifier que l'URL du nouvel onglet pointe bien vers le PDF
+    await expect(newTab).toHaveURL(/\/(assets\/CV-Fanny-Dacheux\.pdf|api\/pdf)/);
+
     await expect(contactBtn).toBeVisible();
-    await expect(contactBtn).toHaveText("Me contacter")
+    await expect(contactBtn).toHaveText("Me contacter");
+
+    await contactBtn.click();
+    const dialog = page.getByRole("dialog");
+    await expect(dialog).toBeVisible();
+    await dialog.locator("> div").click({ position: { x: 0, y: 0 } });
+    await expect(dialog).not.toBeVisible();
   });
 });
