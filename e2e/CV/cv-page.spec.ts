@@ -56,4 +56,22 @@ test.describe("CV", () => {
     await dialog.locator("> div").click({ position: { x: 0, y: 0 } });
     await expect(dialog).not.toBeVisible();
   });
+  test("Job filters", async ({page}) => {
+    const filtersBox = page.locator(".filters-box");
+    await expect(filtersBox.locator(".filters-box_label")).toHaveText("Adapter l'affichage selon le poste recherché :");
+    await expect(filtersBox.getByRole("button")).toHaveCount(4);
+    await expect(filtersBox.getByRole("button").first()).toHaveText("Tous les profils")
+    await expect(filtersBox.getByRole("button").nth(1)).toHaveText("QA & Tests")
+    await expect(filtersBox.getByRole("button").nth(2)).toHaveText("Développement Web")
+    await expect(filtersBox.getByRole("button").last()).toHaveText("Pédagogie & Digital")
+
+    const allProfilesButton = filtersBox.getByRole("button", { name: "Tous les profils" });
+    const qaButton = filtersBox.getByRole("button", { name: "QA & Tests" });
+    await expect(allProfilesButton).toHaveClass(/filter-btn_active/);
+    await expect(qaButton).not.toHaveClass(/filter-btn_active/);
+
+    await qaButton.click();
+    await expect(qaButton).toHaveClass(/filter-btn_active/);
+    await expect(allProfilesButton).not.toHaveClass(/filter-btn_active/);
+  })
 });

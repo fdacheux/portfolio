@@ -49,6 +49,7 @@ function HeroSection() {
             <div className="flex flex-wrap gap-2.5 pt-1">
               <span className="dark-pill">
                 <svg
+                  aria-hidden="true"
                   className="w-4 h-4 text-red-400 shrink-0"
                   fill="none"
                   stroke="currentColor"
