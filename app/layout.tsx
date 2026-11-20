@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./_components/Navbar/Navbar";
 import Footer from "./_components/Footer/Footer";
+import ContactModal from "./_components/ContactModal/ContactModal";
 
 export const metadata: Metadata = {
   title: "Fanny D&T - Portfolio",
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="bg-brand-light text-brand-black font-sans antialiased flex flex-col min-h-screen pt-20 ">
         <Navbar />
         {children}
+        <ContactModal />
         <Footer />
       </body>
     </html>

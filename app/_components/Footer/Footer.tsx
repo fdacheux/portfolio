@@ -1,5 +1,8 @@
+'use client'
+
 import Image from "next/image";
 import Link from "next/link";
+import { openContactModal } from "../ContactModal/ContactModal";
 
 function Footer() {
   return (
@@ -34,13 +37,14 @@ function Footer() {
                 className="absolute bottom-2.5 right-2"
               />
             </Link>
-            <Link
-              href="/contact"
+            <button
+              type="button"
+              onClick={openContactModal}
               className="flex items-center gap-2 bg-white/10 hover:bg-brand-orange border border-white/20 hover:border-brand-orange px-6 py-3 rounded-full transition-all duration-300 font-medium"
             >
               <Image alt="" src="/icons/mail.svg" height={30} width={30} />
               Me contacter par Mail
-            </Link>
+            </button>
           </div>
         </div>
         <div className="text-center pt-8 border-t border-white/10 text-gray-400 text-sm">

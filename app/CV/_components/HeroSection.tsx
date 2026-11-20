@@ -1,4 +1,7 @@
+'use client'
+
 import Image from "next/image";
+import { openContactModal } from "../../_components/ContactModal/ContactModal";
 
 function HeroSection() {
   return (
@@ -117,7 +120,7 @@ function HeroSection() {
               </svg>
               Télécharger mon CV (PDF)
             </button>
-            <button className="bg-white/10 hover:bg-white/20 text-white border border-white/25 backdrop-blur-md font-semibold px-6 py-3.5 rounded-2xl flex items-center justify-center gap-2.5 transition-all text-sm sm:text-base cursor-pointer">
+            <button type="button" onClick={openContactModal} className="bg-white/10 hover:bg-white/20 text-white border border-white/25 backdrop-blur-md font-semibold px-6 py-3.5 rounded-2xl flex items-center justify-center gap-2.5 transition-all text-sm sm:text-base cursor-pointer">
               <Image alt="" src="/icons/mail.svg" height={22} width={22} />
               Me contacter
             </button>

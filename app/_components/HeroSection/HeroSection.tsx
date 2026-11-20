@@ -1,5 +1,8 @@
+'use client'
+
 import Image from "next/image";
 import Link from "next/link";
+// import { openContactModal } from "../ContactModal/ContactModal";
 
 function HeroSection() {
   return (
@@ -85,6 +88,13 @@ function HeroSection() {
                   Découvrir mes projets
                 </div>
               </Link>
+              {/* <button
+                type="button"
+                onClick={openContactModal}
+                className="block rounded-full border-2 border-brand-black text-brand-black text-center font-semibold py-3 px-8 cursor-pointer"
+              >
+                Me contacter
+              </button> */}
             </div>
             {/* Photo */}
           </div>

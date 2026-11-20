@@ -14,8 +14,7 @@ test.describe("Footer", () => {
     await expect
       .poll(() =>
         logo.evaluate(
-          (image: HTMLImageElement) =>
-            image.complete && image.naturalWidth > 0,
+          (image: HTMLImageElement) => image.complete && image.naturalWidth > 0,
         ),
       )
       .toBe(true);
@@ -34,16 +33,16 @@ test.describe("Footer", () => {
     );
   });
 
-  test("navigates to the contact page", async ({ page }) => {
-    const contactLink = page
+  test("contact modal", async ({ page }) => {
+    const contactBtn = page
       .getByRole("contentinfo")
-      .getByRole("link", { name: "Me contacter par mail" });
+      .getByRole("button", { name: "Me contacter par mail" });
+    await contactBtn.click();
+    const dialog = page.getByRole("dialog");
+    await expect(dialog).toBeVisible();
+    await dialog.locator("> div").click({ position: { x: 0, y: 0 } });
+    await expect(dialog).not.toBeVisible();
 
-    await expect(contactLink).toBeVisible();
-    await expect(contactLink).toHaveAttribute("href", "/contact");
-    await contactLink.click();
-
-    await expect(page).toHaveURL(/\/contact$/);
   });
 
   test("displays the copyright notice", async ({ page }) => {

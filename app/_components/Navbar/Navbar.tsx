@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import MobileMenu from "./MobileMenu/MobileMenu";
 import { useState, useEffect, useRef } from "react";
+import { openContactModal } from "../ContactModal/ContactModal";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,9 +70,9 @@ function Navbar() {
                 </Link>
               </li>
               <li className="navbar-links">
-                <Link href="/contact" onClick={toggleHamburger}>
+                <button type="button" onClick={() => { toggleHamburger(); openContactModal(); }}>
                   Contact
-                </Link>
+                </button>
               </li>
             </ul>
             {/* Change Language Button */}

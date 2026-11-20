@@ -1,4 +1,7 @@
+'use client'
+
 import Link from "next/link";
+import { openContactModal } from "../../ContactModal/ContactModal";
 function MobileMenu() {
   return (
     <ul className="md:hidden absolute -right-4 top-14 bg-red-900 w-35 z-10 border-2 border-white rounded-b-sm">
@@ -12,7 +15,7 @@ function MobileMenu() {
         <Link href="/about">À propos du site</Link>
       </li>
       <li className="navbar-links pb-1 pl-2">
-        <Link href="/contact">Contact</Link>
+        <button type="button" onClick={openContactModal}>Contact</button>
       </li>
     </ul>
   );
