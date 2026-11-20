@@ -53,3 +53,7 @@
 .filter-btn_inactive {
   @apply font-semibold bg-slate-100 text-slate-700 hover:bg-red-50 hover:text-red-700;
 }
+
+.bento {
+  @apply bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow flex flex-col;
+}

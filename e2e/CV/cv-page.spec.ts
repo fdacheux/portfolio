@@ -74,4 +74,8 @@ test.describe("CV", () => {
     await expect(qaButton).toHaveClass(/filter-btn_active/);
     await expect(allProfilesButton).not.toHaveClass(/filter-btn_active/);
   })
+  test("bento grid", async({page}) => {
+    const bentoGrid = page.getByRole("grid");
+    await expect(bentoGrid.getByRole("region")).toHaveCount(5);
+  })
 });

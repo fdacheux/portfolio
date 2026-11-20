@@ -66,6 +66,7 @@ function HeroSection() {
               </span>
               <span className="dark-pill">
                 <svg
+                  aria-hidden="true"
                   className="w-4 h-4 text-orange-400 shrink-0"
                   fill="none"
                   stroke="currentColor"
@@ -87,6 +88,7 @@ function HeroSection() {
               </span>
               <span className="dark-pill">
                 <svg
+                  aria-hidden="true"
                   className="w-4 h-4 text-slate-400 shrink-0"
                   fill="none"
                   stroke="currentColor"
@@ -112,6 +114,7 @@ function HeroSection() {
               className="btn-primary text-white font-semibold px-6 py-3.5 rounded-2xl flex items-center justify-center gap-2.5 shadow-lg text-sm sm:text-base cursor-pointer"
             >
               <svg
+                aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
